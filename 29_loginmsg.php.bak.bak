@@ -1,0 +1,40 @@
+﻿<?php
+$id=$_POST['id'];
+$pwd=$_POST['pwd'];
+$connect=mysqli_connect("localhost","root","000000");
+mysqli_select_db($connect,"sample");
+mysqli_query('set names utf8');
+$sqlrec="select * from member where id='$id' and pwd='$pwd'";
+$info=mysqli_query($connect,$sqlrec);
+if(!$info)
+{echo"<script>alert('아이디 또는 비밀번호가 존재하지 않습니다.');history.back();</script>";
+ exit;
+}
+while($i=mysqli_fetch_array($info))
+{
+	$b=$i[‘nickname’];
+	$c=$i[‘regdate’];
+}
+session_start();
+$_SESSION['nicname']=$b;
+$_SESSION['regdate']=$c;
+?>
+<meta http-equiv='refresh' content='0;url=29_loginmsg.php'>
+//-------------------------------------------------------------------------//
+<style>
+p{color:#ccaa11;font-size:1.2em}
+</style>
+<?php
+session_start();
+if(!isset($_SESSION['nicname']) or !isset($_SESSION['regdate']))
+{
+	echo "<meta http-equiv='refresh' content='0;url=29_login.html'>";
+	exit;
+}
+
+	$nicname=$_SESSION['nicname'];
+	$regdate=$_SESSION['regdate'];
+	echo "<p>안녕하세요 $nicname 님</p>";
+	echo "회원님은 $regdate 일에 가입하셨습니다. Meta-Class에서 좋은시간 보내세요";
+
+?>

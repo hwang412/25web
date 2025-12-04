@@ -1,0 +1,4 @@
+﻿CREATE TABLE manager (
+    id VARCHAR(13) NOT NULL PRIMARY KEY,
+    pwd VARCHAR(15) NOT NULL
+);
