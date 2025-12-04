@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>레시피 공유 사이트</title>
+
+<style>
+/* 상단 오른쪽 메뉴 */
+.top-menu {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+}
+.top-menu a {
+    float: right;
+    margin-left: 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+.top-menu::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* 게시판 버튼 */
+.menu-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+.menu-btn:hover {
+    background-color: #45a049;
+}
+</style>
+
+</head>
+<body>
+
+<div class="top-menu">
+    <a href="login.php">로그인</a>
+    <a href="signup.php">회원가입</a>
+</div>
+
+<h1>🍳 레시피 공유 사이트</h1>
+
+<a href="34_board.php" class="menu-btn">📋 게시판 보기</a>
+
+</body>
+</html>
